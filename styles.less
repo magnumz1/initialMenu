@@ -19,22 +19,79 @@ body{
 	cursor: pointer;
 }
 
-#game-menu{
-    height: 50%;
+#game-menu, #initial-menu{
+    height: 60%;
 
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     flex-direction: column;
+    gap: .5rem;
+
+    border: 1px #aaa solid;
+  	padding: 2rem;
+
+    img{
+        text-align: center;
+        font-size: 1.8rem;
+    }
 }
 
-#game-buttons-conteiner{
+#game-buttons-conteiner, #initial-buttons-conteiner{
     display: flex;
     flex-direction: column;
     gap: .8rem;
+    width: 100%;
 
     button{
         font-size: 1.5rem;
         padding: 1rem;
     }
 }
+
+.not-active{
+    position: absolute;
+    z-index: -10;
+
+    opacity: 0;
+    visibility: hidden;
+
+    animation-name: closePopUp;
+	animation-duration: .2s;
+}
+
+.active{
+    opacity: 1;
+    visibility: visible;
+
+    animation-name: openPopUp;
+	animation-duration: .2s;
+}
+
+/* Keyframes da animação de abertura/fechamento dos pop-ups */
+
+@keyframes openPopUp{
+	from {
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	to {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+@keyframes closePopUp{
+	from {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	to {
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+/* ######################################################## */

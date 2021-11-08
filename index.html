@@ -6,14 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet/less" type="text/css" href="styles.less" />
     <script src="https://cdn.jsdelivr.net/npm/less@4.1.1" ></script>
+    <script src="./script.js" defer></script>
     <title>The Core of Shadows</title>
 </head>
 <body>
-    <div id="game-menu">
-        <img src="./logo.png" alt="The Core of Shadows">
+    <div id="game-menu" class="active">
+        <img src="" alt="The Core of Shadows">
         <div id="game-buttons-conteiner">
-            <button class="button" id="new-game-button">Novo Jogo</button>
-            <button class="button" id="load-game-button">Carregar Jogo</button>
+            <button class="button" id="new-game-button" onclick="PopUp.GameMenu.close('new')">Novo Jogo</button>
+            <button class="button" id="load-game-button" onclick="PopUp.GameMenu.close('load')">Carregar Jogo</button>
+        </div>
+    </div>
+
+    <div id="initial-menu" class="not-active">
+        <img src="" alt="The Core of Shadows">
+        <div id="initial-buttons-conteiner">
+            <button class="button">Quests</button>
+            <button class="button">Status</button>
+            <button class="button" id="returnToGameMenu">Voltar</button>
         </div>
     </div>
 </body>
